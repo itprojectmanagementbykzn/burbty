@@ -6,9 +6,9 @@ import 'package:flutter/material.dart';
 class CategoriesIconsContainerWidget extends StatefulWidget {
 
   CategoriesIconsContainerWidget({
-    Key key, 
-    @required CategoriesList categoriesList,
-    this.onPressed
+    Key? key, 
+    required CategoriesList categoriesList,
+    required this.onPressed,
     }) :super(key: key);
 
   final ValueChanged<String> onPressed;
@@ -32,7 +32,7 @@ class _CategoriesIconsContainertState extends State<CategoriesIconsContainerWidg
   }
 }
   _buildSuggestions(List<Category> list,BuildContext context) {
-    List<Widget> categories = List();
+    List<Widget> categories = [];
       list.forEach((item) {
       categories.add(
         Container(

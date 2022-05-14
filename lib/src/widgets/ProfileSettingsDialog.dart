@@ -8,7 +8,7 @@ class ProfileSettingsDialog extends StatefulWidget {
   User user;
   VoidCallback onChanged;
 
-  ProfileSettingsDialog({Key key, this.user, this.onChanged}) : super(key: key);
+  ProfileSettingsDialog({Key? key,required this.user,required this.onChanged}) : super(key: key);
 
   @override
   _ProfileSettingsDialogState createState() => _ProfileSettingsDialogState();
@@ -33,7 +33,7 @@ class _ProfileSettingsDialogState extends State<ProfileSettingsDialog> {
                     SizedBox(width: 10),
                     Text(
                       'Profile Settings',
-                      style: Theme.of(context).textTheme.body2,
+                      style: Theme.of(context).textTheme.bodyText2,
                     )
                   ],
                 ),
@@ -47,16 +47,16 @@ class _ProfileSettingsDialogState extends State<ProfileSettingsDialog> {
                           keyboardType: TextInputType.text,
                           decoration: getInputDecoration(hintText: 'John Doe', labelText: 'Full Name'),
                           initialValue: widget.user.name,
-                          validator: (input) => input.trim().length < 3 ? 'Not a valid full name' : null,
-                          onSaved: (input) => widget.user.name = input,
+                          validator: (input) => input!.trim().length < 3 ? 'Not a valid full name' : null,
+                          onSaved: (input) => widget.user.name = input!,
                         ),
                         new TextFormField(
                           style: TextStyle(color: Theme.of(context).hintColor),
                           keyboardType: TextInputType.emailAddress,
                           decoration: getInputDecoration(hintText: 'johndo@gmail.com', labelText: 'Email Address'),
                           initialValue: widget.user.email,
-                          validator: (input) => !input.contains('@') ? 'Not a valid email' : null,
-                          onSaved: (input) => widget.user.email = input,
+                          validator: (input) => !input!.contains('@') ? 'Not a valid email' : null,
+                          onSaved: (input) => widget.user.email = input!,
                         ),
                         FormField<String>(
                           builder: (FormFieldState<String> state) {
@@ -66,11 +66,11 @@ class _ProfileSettingsDialogState extends State<ProfileSettingsDialog> {
                               value: widget.user.gender,
                               onChanged: (input) {
                                 setState(() {
-                                  widget.user.gender = input;
+                                  widget.user.gender = input!;
                                   widget.onChanged();
                                 });
                               },
-                              onSaved: (input) => widget.user.gender = input,
+                              onSaved: (input) => widget.user.gender = input!,
                               items: [
                                 new DropdownMenuItem(value: 'Male', child: Text('Male')),
                                 new DropdownMenuItem(value: 'Female', child: Text('Female')),
@@ -92,7 +92,7 @@ class _ProfileSettingsDialogState extends State<ProfileSettingsDialog> {
                                     lastDate: DateTime(2100));
                               },
                               onSaved: (input) => setState(() {
-                                widget.user.dateOfBirth = input;
+                                widget.user.dateOfBirth = input ?? DateTime.now();
                                 widget.onChanged();
                               }),
                             );
@@ -127,30 +127,29 @@ class _ProfileSettingsDialogState extends State<ProfileSettingsDialog> {
       },
       child: Text(
         "Edit",
-        style: Theme.of(context).textTheme.body1,
+        style: Theme.of(context).textTheme.bodyText1,
       ),
     );
   }
 
-  InputDecoration getInputDecoration({String hintText, String labelText}) {
-    return new InputDecoration(
+  InputDecoration getInputDecoration({required String hintText,required String labelText}) {
+    return InputDecoration(
       hintText: hintText,
       labelText: labelText,
-      hintStyle: Theme.of(context).textTheme.body1.merge(
+      hintStyle: Theme.of(context).textTheme.bodyText1?.merge(
             TextStyle(color: Theme.of(context).focusColor),
           ),
       enabledBorder: UnderlineInputBorder(borderSide: BorderSide(color: Theme.of(context).hintColor.withOpacity(0.2))),
       focusedBorder: UnderlineInputBorder(borderSide: BorderSide(color: Theme.of(context).hintColor)),
-      hasFloatingPlaceholder: true,
-      labelStyle: Theme.of(context).textTheme.body1.merge(
+      labelStyle: Theme.of(context).textTheme.bodyText1?.merge(
             TextStyle(color: Theme.of(context).hintColor),
-          ),
+          ), floatingLabelBehavior: FloatingLabelBehavior.auto,
     );
   }
 
   void _submit() {
-    if (_profileSettingsFormKey.currentState.validate()) {
-      _profileSettingsFormKey.currentState.save();
+    if (_profileSettingsFormKey.currentState?.validate() == true) {
+      _profileSettingsFormKey.currentState?.save();
       Navigator.pop(context);
     }
   }

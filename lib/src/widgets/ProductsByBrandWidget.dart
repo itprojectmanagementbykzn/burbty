@@ -10,7 +10,7 @@ import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 class UtilitiesByBrandWidget extends StatefulWidget {
   Category category;
 
-  UtilitiesByBrandWidget({Key key, this.category}) : super(key: key);
+  UtilitiesByBrandWidget({Key? key,required this.category}) : super(key: key);
 
   @override
   _UtilitiesByBrandWidgetState createState() => _UtilitiesByBrandWidgetState();
@@ -39,7 +39,7 @@ class _UtilitiesByBrandWidgetState extends State<UtilitiesByBrandWidget> {
               '${widget.category.name} Items',
               overflow: TextOverflow.fade,
               softWrap: false,
-              style: Theme.of(context).textTheme.display1,
+              style: Theme.of(context).textTheme.displaySmall,
             ),
             trailing: Row(
               mainAxisSize: MainAxisSize.min,
@@ -97,11 +97,11 @@ class _UtilitiesByBrandWidgetState extends State<UtilitiesByBrandWidget> {
           offstage: this.layout != 'grid',
           child: Container(
             padding: EdgeInsets.symmetric(horizontal: 20),
-            child: new StaggeredGridView.countBuilder(
-              primary: false,
-              shrinkWrap: true,
+            child:  MasonryGridView.count(
+             // primary: false,
+              //shrinkWrap: true,
               crossAxisCount: 4,
-              itemCount: widget.category.utilities.length,
+              //itemCount: widget.category.utilities.length,
               itemBuilder: (BuildContext context, int index) {
                 Utilitie utilitie = widget.category.utilities.elementAt(index);
                 return UtilitietGridItemWidget(
@@ -110,7 +110,7 @@ class _UtilitiesByBrandWidgetState extends State<UtilitiesByBrandWidget> {
                 );
               },
 //                  staggeredTileBuilder: (int index) => new StaggeredTile.fit(index % 2 == 0 ? 1 : 2),
-              staggeredTileBuilder: (int index) => new StaggeredTile.fit(2),
+             // staggeredTileBuilder: (int index) => new StaggeredTile.fit(2),
               mainAxisSpacing: 15.0,
               crossAxisSpacing: 15.0,
             ),

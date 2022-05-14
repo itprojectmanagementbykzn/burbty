@@ -7,9 +7,9 @@ class PopularLocationCarouselWidget extends StatelessWidget {
   String heroTag;
 
   PopularLocationCarouselWidget({
-    Key key,
-    this.utilitiesList,
-    this.heroTag,
+    Key? key,
+    required this.utilitiesList,
+    required this.heroTag,
   }) : super(key: key);
 
   @override

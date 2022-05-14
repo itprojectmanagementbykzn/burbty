@@ -33,7 +33,7 @@ class _FilterWidgetState extends State<FilterWidget> {
                     },
                     child: Text(
                       'Clear',
-                      style: Theme.of(context).textTheme.body2,
+                      style: Theme.of(context).textTheme.bodyText2,
                     ),
                   )
                 ],
@@ -55,7 +55,7 @@ class _FilterWidgetState extends State<FilterWidget> {
                         value: _category.selected,
                         onChanged: (value) {
                           setState(() {
-                            _category.selected = value;
+                            _category.selected = value ?? false;
                           });
                         },
                         secondary: Container(
@@ -84,7 +84,7 @@ class _FilterWidgetState extends State<FilterWidget> {
                         value: _color.selected,
                         onChanged: (value) {
                           setState(() {
-                            _color.selected = value;
+                            _color.selected = value ?? false;
                           });
                         },
                         secondary: Container(

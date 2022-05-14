@@ -10,7 +10,7 @@ class MessagesWidget extends StatefulWidget {
 }
 
 class _MessagesWidgetState extends State<MessagesWidget> {
-  model.ConversationsList _conversationList;
+  late model.ConversationsList _conversationList;
   @override
   void initState() {
     this._conversationList = new model.ConversationsList();

@@ -8,7 +8,7 @@ class UtilitieHomeTabWidget extends StatefulWidget {
   Utilitie utilitie;
   UtilitiesList _productsList = new UtilitiesList();
 
-  UtilitieHomeTabWidget({this.utilitie});
+  UtilitieHomeTabWidget({required this.utilitie});
 
   @override
   UtilitieHomeTabWidgetState createState() => UtilitieHomeTabWidgetState();
@@ -31,7 +31,7 @@ class UtilitieHomeTabWidgetState extends State<UtilitieHomeTabWidget> {
                   widget.utilitie.name,
                   overflow: TextOverflow.ellipsis,
                   maxLines: 2,
-                  style: Theme.of(context).textTheme.display2,
+                  style: Theme.of(context).textTheme.displayMedium,
                 ),
               ),
               Chip(
@@ -41,7 +41,7 @@ class UtilitieHomeTabWidgetState extends State<UtilitieHomeTabWidget> {
                   children: <Widget>[
                     Text(widget.utilitie.rate.toString(),
                         style:
-                            Theme.of(context).textTheme.body2.merge(TextStyle(color: Theme.of(context).primaryColor))),
+                            Theme.of(context).textTheme.bodyText2?.merge(TextStyle(color: Theme.of(context).primaryColor))),
                     SizedBox(width: 4),
                     Icon(
                       Icons.star_border,
@@ -66,7 +66,7 @@ class UtilitieHomeTabWidgetState extends State<UtilitieHomeTabWidget> {
                   widget.utilitie.type,
                   overflow: TextOverflow.ellipsis,
                   maxLines: 2,
-                  style: Theme.of(context).textTheme.body2
+                  style: Theme.of(context).textTheme.bodyText2
                 ),
               ),
             ],
@@ -86,7 +86,7 @@ class UtilitieHomeTabWidgetState extends State<UtilitieHomeTabWidget> {
                 ),
                 title: Text(
                   'Description',
-                  style: Theme.of(context).textTheme.display1,
+                  style: Theme.of(context).textTheme.displaySmall,
                 ),
               ),
             ),
@@ -125,7 +125,7 @@ class UtilitieHomeTabWidgetState extends State<UtilitieHomeTabWidget> {
             ),
             title: Text(
               'Related',
-              style: Theme.of(context).textTheme.display1,
+              style: Theme.of(context).textTheme.displaySmall,
             ),
           ),
         ),
@@ -138,7 +138,7 @@ class UtilitieHomeTabWidgetState extends State<UtilitieHomeTabWidget> {
 
 class SelectColorWidget extends StatefulWidget {
   SelectColorWidget({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override

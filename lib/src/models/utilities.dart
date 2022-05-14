@@ -11,7 +11,7 @@ class Utilitie{
   
   Utilitie(this.name, this.image,this.type,this.available, this.price, this.rate, this.discount);
 
-  String getPrice({double myPrice}) {
+  String getPrice({required double myPrice}) {
     if (myPrice != null) {
       return '\$${myPrice.toStringAsFixed(2)}';
     }
@@ -19,11 +19,11 @@ class Utilitie{
   }
 }
 class UtilitiesList {
-  List<Utilitie> _popularList;
-  List<Utilitie> _list;
-  List<Utilitie> _recentList;
-  List<Utilitie> _favoritesList;
-  List<Utilitie> _cartList;
+  late List<Utilitie> _popularList;
+  late List<Utilitie> _list;
+  late List<Utilitie> _recentList;
+  late List<Utilitie> _favoritesList;
+  late List<Utilitie> _cartList;
 
   //set recentList(List<Utilitie> value) {
     //_recentList = value;

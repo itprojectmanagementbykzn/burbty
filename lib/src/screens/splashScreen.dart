@@ -1,6 +1,5 @@
-import 'package:flutter/material.dart';
+/*import 'package:flutter/material.dart';
 import '../screens/on_boarding.dart';
-import 'package:splashscreen/splashscreen.dart';
 
 class Splash extends StatefulWidget {
   @override
@@ -10,7 +9,7 @@ class Splash extends StatefulWidget {
 class _SplashState extends State<Splash> {
   @override
   Widget build(BuildContext context) {
-    return new SplashScreen(
+    return  FlutterNativeSplashScreen(
       seconds: 8,
       navigateAfterSeconds: new OnBoardingWidget(),
       title: new Text(
@@ -27,4 +26,4 @@ class _SplashState extends State<Splash> {
       
     );
   }
-}
+}*/

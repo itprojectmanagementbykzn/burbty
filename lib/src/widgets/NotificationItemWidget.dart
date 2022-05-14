@@ -3,7 +3,8 @@ import '../models/notification.dart' as model;
 import 'package:flutter/material.dart';
 
 class NotificationItemWidget extends StatefulWidget {
-  NotificationItemWidget({Key key, this.notification, this.onDismissed}) : super(key: key);
+  NotificationItemWidget({Key? key,required this.notification,
+  required this.onDismissed,}) : super(key: key);
   model.Notification notification;
   ValueChanged<model.Notification> onDismissed;
 
@@ -62,7 +63,7 @@ class _NotificationItemWidgetState extends State<NotificationItemWidget> {
                     this.widget.notification.title,
                     overflow: TextOverflow.ellipsis,
                     maxLines: 2,
-                    style: Theme.of(context).textTheme.body2.merge(
+                    style: Theme.of(context).textTheme.bodyText2?.merge(
                         TextStyle(fontWeight: this.widget.notification.read ? FontWeight.w300 : FontWeight.w600)),
                   ),
                   Text(

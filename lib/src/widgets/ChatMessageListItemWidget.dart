@@ -5,14 +5,15 @@ import 'package:flutter/material.dart';
 class ChatMessageListItem extends StatelessWidget {
   Chat chat;
   User currentUser = new User.init().getCurrentUser();
-  final Animation animation;
+  final Animation<double> animation;
 
-  ChatMessageListItem({this.chat, this.animation});
+  ChatMessageListItem({required this.chat,
+  required this.animation,});
 
   @override
   Widget build(BuildContext context) {
-    return new SizeTransition(
-      sizeFactor: new CurvedAnimation(parent: animation, curve: Curves.decelerate),
+    return  SizeTransition(
+      sizeFactor: CurvedAnimation(parent: animation, curve: Curves.decelerate),
       child:
           currentUser.name == this.chat.user.name ? getSentMessageLayout(context) : getReceivedMessageLayout(context),
     );
@@ -35,7 +36,7 @@ class ChatMessageListItem extends StatelessWidget {
               child: new Column(
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: <Widget>[
-                  new Text(this.chat.user.name, style: Theme.of(context).textTheme.body2),
+                  new Text(this.chat.user.name, style: Theme.of(context).textTheme.bodyText2),
                   new Container(
                     margin: const EdgeInsets.only(top: 5.0),
                     child: new Text(chat.text),
@@ -87,7 +88,7 @@ class ChatMessageListItem extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   new Text(this.chat.user.name,
-                      style: Theme.of(context).textTheme.body2.merge(TextStyle(color: Theme.of(context).primaryColor))),
+                      style: Theme.of(context).textTheme.bodyText2?.merge(TextStyle(color: Theme.of(context).primaryColor))),
                   new Container(
                     margin: const EdgeInsets.only(top: 5.0),
                     child: new Text(

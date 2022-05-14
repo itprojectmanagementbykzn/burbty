@@ -17,15 +17,6 @@ class _HomeSliderWidgetState extends State<HomeSliderWidget> {
       alignment: AlignmentDirectional.bottomEnd,
       children: <Widget>[
         CarouselSlider(
-          autoPlay: true,
-          autoPlayInterval: Duration(seconds: 5),
-          height: 200,
-          viewportFraction: 1.0,
-          onPageChanged: (index) {
-            setState(() {
-              _current = index;
-            });
-          },
           items: _sliderList.list.map((prefix0.Slider slide) {
             return Builder(
               builder: (BuildContext context) {
@@ -46,7 +37,17 @@ class _HomeSliderWidgetState extends State<HomeSliderWidget> {
                 );
               },
             );
-          }).toList(),
+          }).toList(), options: CarouselOptions(
+            autoPlay: true,
+          autoPlayInterval: const Duration(seconds: 5),
+          height: 200,
+          viewportFraction: 1.0,
+          onPageChanged: (index,__) {
+            setState(() {
+              _current = index;
+            });
+          },
+          ),
         ),
         Center(
           child: Row(

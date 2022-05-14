@@ -10,9 +10,9 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 class CategorieWidget extends StatefulWidget {
   RouteArgument routeArgument;
-  Category _category;
+  late Category _category;
 
-  CategorieWidget({Key key, this.routeArgument}) {
+  CategorieWidget({Key? key,required this.routeArgument}) {
     _category = this.routeArgument.argumentsList[0] as Category;
   }
 
@@ -21,7 +21,7 @@ class CategorieWidget extends StatefulWidget {
 }
 
 class _CategorieWidgetState extends State<CategorieWidget> with SingleTickerProviderStateMixin {
-  TabController _tabController;
+  late TabController _tabController;
   final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
   int _tabIndex = 0;
 
@@ -107,7 +107,7 @@ class _CategorieWidgetState extends State<CategorieWidget> with SingleTickerProv
                         SizedBox(height: 15,),
                         Text(
                           '${widget._category.name}',
-                          style: Theme.of(context).textTheme.display3,                         
+                          style: Theme.of(context).textTheme.displayLarge,                         
                         )
                       ],
                     )

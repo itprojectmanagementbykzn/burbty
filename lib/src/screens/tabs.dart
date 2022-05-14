@@ -17,8 +17,8 @@ class TabsWidget extends StatefulWidget {
   Widget currentPage = HomeWidget();
 
   TabsWidget({
-    Key key,
-    this.currentTab,
+    Key? key,
+    required this.currentTab,
   }) : super(key: key);
 
   @override
@@ -85,13 +85,13 @@ class _TabsWidgetState extends State<TabsWidget> {
         automaticallyImplyLeading: false,
         leading: new IconButton(
           icon: new Icon(Icons.sort, color: Theme.of(context).hintColor),
-          onPressed: () => _scaffoldKey.currentState.openDrawer(),
+          onPressed: () => _scaffoldKey.currentState?.openDrawer(),
         ),
         backgroundColor: Colors.transparent,
         elevation: 0,
         title: Text(
           widget.currentTitle,
-          style: Theme.of(context).textTheme.display1,
+          style: Theme.of(context).textTheme.displaySmall,
         ),
         actions: <Widget>[
           Container(
@@ -128,14 +128,16 @@ class _TabsWidgetState extends State<TabsWidget> {
         items: [
           BottomNavigationBarItem(
             icon: Icon(UiIcons.bell),
-            title: new Container(height: 0.0),
+           label: "",
           ),
           BottomNavigationBarItem(
             icon: Icon(UiIcons.user_1),
-            title: new Container(height: 0.0),
+            label: "",
+           // title: new Container(height: 0.0),
           ),
           BottomNavigationBarItem(
-              title: new Container(height: 5.0),
+            label: "",
+              //title: new Container(height: 5.0),
               icon: Container(
                 width: 45,
                 height: 45,
@@ -154,12 +156,14 @@ class _TabsWidgetState extends State<TabsWidget> {
                 child: new Icon(UiIcons.home, color: Theme.of(context).primaryColor),
               )),
           BottomNavigationBarItem(
+            label: "",
             icon: new Icon(UiIcons.chat),
-            title: new Container(height: 0.0),
+            //title: new Container(height: 0.0),
           ),
           BottomNavigationBarItem(
+            label: "",
             icon: new Icon(UiIcons.heart),
-            title: new Container(height: 0.0),
+            //title: new Container(height: 0.0),
           ),
         ],
       ),

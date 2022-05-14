@@ -5,7 +5,9 @@ class CategoryIconWidget extends StatefulWidget {
   Category category;
   ValueChanged<String> onPressed;
 
-  CategoryIconWidget({Key key, this.category,  this.onPressed}) : super(key: key);
+  CategoryIconWidget({Key? key,
+  required this.category,
+  required  this.onPressed,}) : super(key: key);
 
   @override
   _CategoryIconWidgetState createState() => _CategoryIconWidgetState();
@@ -37,7 +39,7 @@ class _CategoryIconWidgetState extends State<CategoryIconWidget> with SingleTick
             SizedBox(height: 6,),
             Text(
               widget.category.name,
-              style: Theme.of(context).textTheme.body1,
+              style: Theme.of(context).textTheme.bodyText1,
             ),
           ],
       ),

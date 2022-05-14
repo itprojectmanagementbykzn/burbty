@@ -8,10 +8,10 @@ import 'package:flutter/material.dart';
 // ignore: must_be_immutable
 class UtilitieWidget extends StatefulWidget {
   RouteArgument routeArgument;
-  Utilitie _utilitie;
-  String _heroTag;
+  late Utilitie _utilitie;
+  late String _heroTag;
 
-  UtilitieWidget({Key key, this.routeArgument}) {
+  UtilitieWidget({ Key? key,required this.routeArgument}) : super(key: key) {
     _utilitie = this.routeArgument.argumentsList[0] as Utilitie;
     _heroTag = this.routeArgument.argumentsList[1] as String;
   }
@@ -21,7 +21,7 @@ class UtilitieWidget extends StatefulWidget {
 }
 
 class _UtilitieWidgetState extends State<UtilitieWidget> with SingleTickerProviderStateMixin {
-  TabController _tabController;
+  late TabController _tabController;
   final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
   int _tabIndex = 0;
 
@@ -182,7 +182,7 @@ class _UtilitieWidgetState extends State<UtilitieWidget> with SingleTickerProvid
                         'Reviews',
                         overflow: TextOverflow.fade,
                         softWrap: false,
-                        style: Theme.of(context).textTheme.display1,
+                        style: Theme.of(context).textTheme.displaySmall,
                       ),
                     ),
                   ),

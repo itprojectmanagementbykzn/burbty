@@ -10,7 +10,7 @@ class NotificationsWidget extends StatefulWidget {
 }
 
 class _NotificationsWidgetState extends State<NotificationsWidget> {
-  model.NotificationList _notificationList;
+  late model.NotificationList _notificationList;
 
   @override
   void initState() {

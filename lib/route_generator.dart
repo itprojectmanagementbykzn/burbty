@@ -16,13 +16,11 @@ class RouteGenerator {
 
     switch (settings.name) {
       case '/':
-        return MaterialPageRoute(builder: (_) => Splash());
-      case '/SignIn':
         return MaterialPageRoute(builder: (_) => SignInWidget()); 
       case '/SignUp':
         return MaterialPageRoute(builder: (_) => SignUpWidget());  
       case '/Tabs':
-        return MaterialPageRoute(builder: (_) => TabsWidget(currentTab: args,));    
+        return MaterialPageRoute(builder: (_) => TabsWidget(currentTab: args as int,));    
       case '/Utilities':
         return MaterialPageRoute(builder: (_) => UtilitieWidget(routeArgument: args as RouteArgument,));
       case '/Languages':

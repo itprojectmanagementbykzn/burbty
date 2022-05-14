@@ -1,12 +1,13 @@
+import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
+
 import '../models/category.dart';
 import '../models/route_argument.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
 class BrandGridWidget extends StatelessWidget {
   const BrandGridWidget({
-    Key key,
-    @required CategoriesList categoriesList,
+    Key? key,
+    required CategoriesList categoriesList,
   })  : _categoriesList = categoriesList,
         super(key: key);
 
@@ -14,7 +15,7 @@ class BrandGridWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return StaggeredGridView.countBuilder(
+    return MasonryGridView.count(
       primary: false,
       shrinkWrap: true,
       padding: EdgeInsets.only(top: 15),
@@ -96,7 +97,7 @@ class BrandGridWidget extends StatelessWidget {
                   children: <Widget>[
                     Text(
                       category.name,
-                      style: Theme.of(context).textTheme.body2,
+                      style: Theme.of(context).textTheme.bodyText2,
                       maxLines: 1,
                       softWrap: false,
                       overflow: TextOverflow.fade,
@@ -107,7 +108,7 @@ class BrandGridWidget extends StatelessWidget {
                         Expanded(
                           child: Text(
                             '${category.utilities.length} Items',
-                            style: Theme.of(context).textTheme.body1,
+                            style: Theme.of(context).textTheme.bodyText1,
                             overflow: TextOverflow.fade,
                             softWrap: false,
                           ),
@@ -129,7 +130,7 @@ class BrandGridWidget extends StatelessWidget {
         );
       },
 //                  staggeredTileBuilder: (int index) => new StaggeredTile.fit(index % 2 == 0 ? 1 : 2),
-      staggeredTileBuilder: (int index) => new StaggeredTile.fit(1),
+     // staggeredTileBuilder: (int index) => new StaggeredTile.fit(1),
       mainAxisSpacing: 15.0,
       crossAxisSpacing: 15.0,
     );

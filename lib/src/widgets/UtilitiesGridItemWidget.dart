@@ -4,9 +4,9 @@ import '../models/utilities.dart';
 
 class UtilitietGridItemWidget extends StatelessWidget {
   const UtilitietGridItemWidget({
-    Key key,
-    @required this.utilitie,
-    @required this.heroTag,
+    Key? key,
+    required this.utilitie,
+    required this.heroTag,
   }) : super(key: key);
 
   final Utilitie utilitie;
@@ -44,14 +44,14 @@ class UtilitietGridItemWidget extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
               child: Text(
                 utilitie.name,
-                style: Theme.of(context).textTheme.body2,
+                style: Theme.of(context).textTheme.bodyMedium,
               ),
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 15),
               child: Text(
                 '${utilitie.available} Viewers',
-                style: Theme.of(context).textTheme.display1,
+                style: Theme.of(context).textTheme.displaySmall,
               ),
             ),
             Padding(
@@ -62,7 +62,7 @@ class UtilitietGridItemWidget extends StatelessWidget {
                   Expanded(
                     child: Text(
                       '',
-                      style: Theme.of(context).textTheme.body1,
+                      style: Theme.of(context).textTheme.bodyText1,
                       overflow: TextOverflow.fade,
                       softWrap: false,
                     ),
@@ -75,7 +75,7 @@ class UtilitietGridItemWidget extends StatelessWidget {
                   SizedBox(width: 2,),
                   Text(
                     utilitie.rate.toString(),
-                    style: Theme.of(context).textTheme.body2,
+                    style: Theme.of(context).textTheme.bodyText2,
                   )
                 ],
                 

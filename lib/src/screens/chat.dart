@@ -65,7 +65,7 @@ class _ChatWidgetState extends State<ChatWidget> {
                     setState(() {
                       _conversationList.conversations[0].chats
                           .insert(0, new Chat(myController.text, '21min ago', _currentUser));
-                      _myListKey.currentState.insertItem(0);
+                      _myListKey.currentState?.insertItem(0);
                     });
                     Timer(Duration(milliseconds: 100), () {
                       myController.clear();

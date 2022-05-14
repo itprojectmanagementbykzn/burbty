@@ -7,7 +7,7 @@ class ReviewsListWidget extends StatelessWidget {
   ReviewsList _reviewsList = new ReviewsList();
 
   ReviewsListWidget({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override

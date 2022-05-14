@@ -8,7 +8,7 @@ class Notification {
 }
 
 class NotificationList {
-  List<Notification> _notifications;
+  late List<Notification> _notifications;
 
   NotificationList() {
     this._notifications = [

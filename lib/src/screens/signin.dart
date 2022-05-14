@@ -28,28 +28,40 @@ class _SignInWidgetState extends State<SignInWidget> {
                       color: Theme.of(context).primaryColor,
                       boxShadow: [
                         BoxShadow(
-                            color: Theme.of(context).hintColor.withOpacity(0.2), offset: Offset(0, 10), blurRadius: 20)
+                            color: Theme.of(context).hintColor.withOpacity(0.2),
+                            offset: Offset(0, 10),
+                            blurRadius: 20)
                       ]),
                   child: Column(
                     children: <Widget>[
                       SizedBox(height: 25),
-                      Text('Sign In', style: Theme.of(context).textTheme.display2),
+                      Text('Sign In',
+                          style: Theme.of(context).textTheme.displayMedium),
                       SizedBox(height: 20),
                       new TextField(
                         style: TextStyle(color: Theme.of(context).focusColor),
                         keyboardType: TextInputType.emailAddress,
                         decoration: new InputDecoration(
                           hintText: 'Email Address',
-                          hintStyle: Theme.of(context).textTheme.body1.merge(
-                                TextStyle(color: Theme.of(context).focusColor.withOpacity(0.6)),
-                              ),
+                          hintStyle:
+                              Theme.of(context).textTheme.bodyText1?.merge(
+                                    TextStyle(
+                                        color: Theme.of(context)
+                                            .focusColor
+                                            .withOpacity(0.6)),
+                                  ),
                           enabledBorder: UnderlineInputBorder(
-                              borderSide: BorderSide(color: Theme.of(context).focusColor.withOpacity(0.2))),
-                          focusedBorder:
-                              UnderlineInputBorder(borderSide: BorderSide(color: Theme.of(context).focusColor)),
+                              borderSide: BorderSide(
+                                  color: Theme.of(context)
+                                      .focusColor
+                                      .withOpacity(0.2))),
+                          focusedBorder: UnderlineInputBorder(
+                              borderSide: BorderSide(
+                                  color: Theme.of(context).focusColor)),
                           prefixIcon: Icon(
                             UiIcons.envelope,
-                            color: Theme.of(context).focusColor.withOpacity(0.6),
+                            color:
+                                Theme.of(context).focusColor.withOpacity(0.6),
                           ),
                         ),
                       ),
@@ -60,16 +72,25 @@ class _SignInWidgetState extends State<SignInWidget> {
                         obscureText: !_showPassword,
                         decoration: new InputDecoration(
                           hintText: 'Password',
-                          hintStyle: Theme.of(context).textTheme.body1.merge(
-                                TextStyle(color: Theme.of(context).focusColor.withOpacity(0.6)),
-                              ),
+                          hintStyle:
+                              Theme.of(context).textTheme.bodyText1?.merge(
+                                    TextStyle(
+                                        color: Theme.of(context)
+                                            .focusColor
+                                            .withOpacity(0.6)),
+                                  ),
                           enabledBorder: UnderlineInputBorder(
-                              borderSide: BorderSide(color: Theme.of(context).focusColor.withOpacity(0.2))),
-                          focusedBorder:
-                              UnderlineInputBorder(borderSide: BorderSide(color: Theme.of(context).focusColor)),
+                              borderSide: BorderSide(
+                                  color: Theme.of(context)
+                                      .focusColor
+                                      .withOpacity(0.2))),
+                          focusedBorder: UnderlineInputBorder(
+                              borderSide: BorderSide(
+                                  color: Theme.of(context).focusColor)),
                           prefixIcon: Icon(
                             UiIcons.padlock_1,
-                            color: Theme.of(context).focusColor.withOpacity(0.6),
+                            color:
+                                Theme.of(context).focusColor.withOpacity(0.6),
                           ),
                           suffixIcon: IconButton(
                             onPressed: () {
@@ -77,8 +98,11 @@ class _SignInWidgetState extends State<SignInWidget> {
                                 _showPassword = !_showPassword;
                               });
                             },
-                            color: Theme.of(context).focusColor.withOpacity(0.4),
-                            icon: Icon(_showPassword ? Icons.visibility_off : Icons.visibility),
+                            color:
+                                Theme.of(context).focusColor.withOpacity(0.4),
+                            icon: Icon(_showPassword
+                                ? Icons.visibility_off
+                                : Icons.visibility),
                           ),
                         ),
                       ),
@@ -87,20 +111,23 @@ class _SignInWidgetState extends State<SignInWidget> {
                         onPressed: () {},
                         child: Text(
                           'Forgot your password ?',
-                          style: Theme.of(context).textTheme.body1,
+                          style: Theme.of(context).textTheme.bodyText1,
                         ),
                       ),
                       SizedBox(height: 30),
                       FlatButton(
-                        padding: EdgeInsets.symmetric(vertical: 12, horizontal: 70),
+                        padding:
+                            EdgeInsets.symmetric(vertical: 12, horizontal: 70),
                         onPressed: () {
                           // 2 number refer the index of Home page
-                          Navigator.of(context).pushNamed('/Tabs', arguments: 2);
+                          Navigator.of(context)
+                              .pushNamed('/Tabs', arguments: 2);
                         },
                         child: Text(
                           'Login',
-                          style: Theme.of(context).textTheme.title.merge(
-                                TextStyle(color: Theme.of(context).primaryColor),
+                          style: Theme.of(context).textTheme.subtitle1?.merge(
+                                TextStyle(
+                                    color: Theme.of(context).primaryColor),
                               ),
                         ),
                         color: Theme.of(context).accentColor,
@@ -109,7 +136,7 @@ class _SignInWidgetState extends State<SignInWidget> {
                       SizedBox(height: 50),
                       Text(
                         'Or using social media',
-                        style: Theme.of(context).textTheme.body1,
+                        style: Theme.of(context).textTheme.bodyText1,
                       ),
                       SizedBox(height: 20),
                       new SocialMediaWidget()
@@ -124,12 +151,14 @@ class _SignInWidgetState extends State<SignInWidget> {
               },
               child: RichText(
                 text: TextSpan(
-                  style: Theme.of(context).textTheme.title.merge(
+                  style: Theme.of(context).textTheme.subtitle1?.merge(
                         TextStyle(color: Theme.of(context).primaryColor),
                       ),
                   children: [
                     TextSpan(text: 'Don\'t have an account ?'),
-                    TextSpan(text: ' Sign Up', style: TextStyle(fontWeight: FontWeight.w700)),
+                    TextSpan(
+                        text: ' Sign Up',
+                        style: TextStyle(fontWeight: FontWeight.w700)),
                   ],
                 ),
               ),

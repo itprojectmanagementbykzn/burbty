@@ -24,13 +24,13 @@ class _CategoriesWidgetState extends State<CategoriesWidget> {
         automaticallyImplyLeading: false,
         leading: new IconButton(
           icon: new Icon(Icons.sort, color: Theme.of(context).hintColor),
-          onPressed: () => _scaffoldKey.currentState.openDrawer(),
+          onPressed: () => _scaffoldKey.currentState?.openDrawer(),
         ),
         backgroundColor: Colors.transparent,
         elevation: 0,
         title: Text(
           'Categories',
-          style: Theme.of(context).textTheme.display1,
+          style: Theme.of(context).textTheme.displaySmall,
         ),
         actions: <Widget>[
           //new ShoppingCartButtonWidget(

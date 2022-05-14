@@ -5,13 +5,13 @@ import 'UtilitiesRelateItemWidget.dart';
 
 class CategorizedUtilitiesWidget extends StatelessWidget {
   const CategorizedUtilitiesWidget({
-    Key key,
-    @required this.animationOpacity,
-    @required List<Utilitie> utilitiesList,
+    Key? key,
+    required this.animationOpacity,
+    required List<Utilitie> utilitiesList,
   })  : _utilitiesList = utilitiesList,
         super(key: key);
 
-  final Animation animationOpacity;
+  final Animation<double> animationOpacity;
   final List<Utilitie> _utilitiesList;
 
   @override
@@ -20,7 +20,7 @@ class CategorizedUtilitiesWidget extends StatelessWidget {
       opacity: animationOpacity,
       child: Container(
         padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-        child: new StaggeredGridView.countBuilder(
+        child:  MasonryGridView.count(
           primary: false,
           shrinkWrap: true,
           crossAxisCount: 1,
@@ -32,7 +32,7 @@ class CategorizedUtilitiesWidget extends StatelessWidget {
               heroTag: 'categorized_utilities_grid',
             );
           },
-          staggeredTileBuilder: (int index) => new StaggeredTile.fit(2),
+          //staggeredTileBuilder: (int index) => new StaggeredTile.fit(2),
           mainAxisSpacing: 15.0,
           crossAxisSpacing: 15.0,
         ),

@@ -4,9 +4,9 @@ import 'package:flutter/material.dart';
 
 class UtilitieRelateItemWidget extends StatelessWidget {
   const UtilitieRelateItemWidget({
-    Key key,
-    @required this.utilitie,
-    @required this.heroTag,
+    Key? key,
+    required this.utilitie,
+    required this.heroTag,
   }) : super(key: key);
 
   final Utilitie utilitie;
@@ -53,14 +53,14 @@ class UtilitieRelateItemWidget extends StatelessWidget {
                   padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
                   child: Text(
                     utilitie.name,
-                    style: Theme.of(context).textTheme.body2,
+                    style: Theme.of(context).textTheme.bodyText2,
                   ),
                 ),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
                   child: Text(
                     utilitie.type,
-                    style: Theme.of(context).textTheme.body1,
+                    style: Theme.of(context).textTheme.bodyText1,
                   ),
                 ),
                 SizedBox(height:6),
@@ -70,7 +70,7 @@ class UtilitieRelateItemWidget extends StatelessWidget {
                     children: <Widget>[
                       Text(
                         utilitie.rate.toString(),
-                        style: Theme.of(context).textTheme.body2,
+                        style: Theme.of(context).textTheme.bodyText2,
                       ),
                       SizedBox(width:6),
                       Icon(

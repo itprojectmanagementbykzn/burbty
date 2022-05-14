@@ -19,7 +19,7 @@ class Review {
 }
 
 class ReviewsList {
-  List<Review> _reviewsList;
+  late List<Review> _reviewsList;
 
   List<Review> get reviewsList => _reviewsList;
 

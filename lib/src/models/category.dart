@@ -23,7 +23,7 @@ class SubCategory {
 }
 
 class CategoriesList {
-  List<Category> _list;
+  late List<Category> _list;
 
   List<Category> get list => _list;
 
@@ -104,7 +104,7 @@ class CategoriesList {
 }
 
 class SubCategoriesList {
-  List<SubCategory> _list;
+  late List<SubCategory> _list;
 
   List<SubCategory> get list => _list;
 

@@ -7,37 +7,41 @@ import '../widgets/HomeSliderWidget.dart';
 import 'package:flutter/material.dart';
 import '../widgets/PopularLocationCarouselWidget.dart';
 import '../widgets/SearchBarHomeWidget.dart';
+
 class HomeWidget extends StatefulWidget {
   @override
   _HomeWidgetState createState() => _HomeWidgetState();
 }
 
-class _HomeWidgetState extends State<HomeWidget> with SingleTickerProviderStateMixin {
-  List<Utilitie> _utilitiesOfCategoryList;
-  List<Utilitie> _utilitiesfBrandList;
+class _HomeWidgetState extends State<HomeWidget>
+    with SingleTickerProviderStateMixin {
+  List<Utilitie>? _utilitiesOfCategoryList;
+  List<Utilitie>? _utilitiesfBrandList;
   CategoriesList _categoriesList = new CategoriesList();
   UtilitiesList _utilitiesList = new UtilitiesList();
 
-  Animation animationOpacity;
-  AnimationController animationController;
+  Animation<double>? animationOpacity;
+  AnimationController? animationController;
 
   @override
   void initState() {
-    animationController = AnimationController(duration: Duration(milliseconds: 200), vsync: this);
-    CurvedAnimation curve = CurvedAnimation(parent: animationController, curve: Curves.easeIn);
+    animationController =
+        AnimationController(duration: Duration(milliseconds: 200), vsync: this);
+    CurvedAnimation curve =
+        CurvedAnimation(parent: animationController!.view, curve: Curves.easeIn);
     animationOpacity = Tween(begin: 0.0, end: 1.0).animate(curve)
       ..addListener(() {
         setState(() {});
       });
 
-    animationController.forward();
+    animationController?.forward();
 
     _utilitiesOfCategoryList = _categoriesList.list.firstWhere((category) {
       return category.selected;
     }).utilities;
 
     //_utilitiesfBrandList = _brandsList.list.firstWhere((brand) {
-      //return brand.selected;
+    //return brand.selected;
     //}).utilities;
     super.initState();
   }
@@ -45,25 +49,27 @@ class _HomeWidgetState extends State<HomeWidget> with SingleTickerProviderStateM
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
-      child: Column(
-        children: <Widget>[
-          Stack(
-            children: <Widget>[
-              HomeSliderWidget(),
-              Container(
-                margin: const EdgeInsets.only(top: 150,bottom: 20),
-                padding: const EdgeInsets.only(right: 20,left: 20),
-                child: SearchBarHomeWidget(),
+        child: Column(
+      children: <Widget>[
+        Stack(
+          children: <Widget>[
+            HomeSliderWidget(),
+            Container(
+              margin: const EdgeInsets.only(top: 150, bottom: 20),
+              padding: const EdgeInsets.only(right: 20, left: 20),
+              child: SearchBarHomeWidget(),
             ),
-            ],
-          ),
-          Container(
-            padding: const EdgeInsets.only(right: 2,left: 2),
-            child: CategoriesIconsContainerWidget(categoriesList: _categoriesList,)
-          ),
-          Padding( 
+          ],
+        ),
+        Container(
+            padding: const EdgeInsets.only(right: 2, left: 2),
+            child: CategoriesIconsContainerWidget(
+              categoriesList: _categoriesList,
+              onPressed: (String value) {},
+            )),
+        Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
-            child:Column(
+            child: Column(
               children: <Widget>[
                 ListTile(
                   dense: true,
@@ -74,17 +80,17 @@ class _HomeWidgetState extends State<HomeWidget> with SingleTickerProviderStateM
                   ),
                   title: Text(
                     'Popular',
-                    style: Theme.of(context).textTheme.display1,
+                    style: Theme.of(context).textTheme.displaySmall,
                   ),
                 ),
               ],
-            ) 
-            
-        ),
-          PopularLocationCarouselWidget(heroTag: 'home_flash_sales', utilitiesList: _utilitiesList.popularList),
-          Padding( 
+            )),
+        PopularLocationCarouselWidget(
+            heroTag: 'home_flash_sales',
+            utilitiesList: _utilitiesList.popularList),
+        Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
-            child:Column(
+            child: Column(
               children: <Widget>[
                 ListTile(
                   dense: true,
@@ -95,16 +101,16 @@ class _HomeWidgetState extends State<HomeWidget> with SingleTickerProviderStateM
                   ),
                   title: Text(
                     'Recent',
-                    style: Theme.of(context).textTheme.display1,
+                    style: Theme.of(context).textTheme.displaySmall,
                   ),
                 ),
               ],
-            ) 
-            
-        ),
-          CategorizedUtilitiesWidget(animationOpacity : animationOpacity ,utilitiesList: _utilitiesList.recentList,)
-        ],
-      )
-    );
+            )),
+        CategorizedUtilitiesWidget(
+          animationOpacity: animationOpacity!,
+          utilitiesList: _utilitiesList.recentList,
+        )
+      ],
+    ));
   }
 }

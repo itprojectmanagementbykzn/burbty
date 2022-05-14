@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 class ReviewItemWidget extends StatelessWidget {
   Review review;
 
-  ReviewItemWidget({Key key, this.review}) : super(key: key);
+  ReviewItemWidget({Key? key,required this.review}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -44,8 +44,8 @@ class ReviewItemWidget extends StatelessWidget {
                               maxLines: 2,
                               style: Theme.of(context)
                                   .textTheme
-                                  .title
-                                  .merge(TextStyle(color: Theme.of(context).hintColor)),
+                                  .subtitle1
+                                  ?.merge(TextStyle(color: Theme.of(context).hintColor)),
                             ),
                             Row(
                               children: <Widget>[
@@ -75,8 +75,8 @@ class ReviewItemWidget extends StatelessWidget {
                             Text(review.rate.toString(),
                                 style: Theme.of(context)
                                     .textTheme
-                                    .body2
-                                    .merge(TextStyle(color: Theme.of(context).primaryColor))),
+                                    .bodyText2
+                                    ?.merge(TextStyle(color: Theme.of(context).primaryColor))),
                             Icon(
                               Icons.star_border,
                               color: Theme.of(context).primaryColor,
@@ -96,7 +96,7 @@ class ReviewItemWidget extends StatelessWidget {
         ),
         Text(
           review.review,
-          style: Theme.of(context).textTheme.body1,
+          style: Theme.of(context).textTheme.bodyText1,
           overflow: TextOverflow.ellipsis,
           softWrap: false,
           maxLines: 3,

@@ -4,7 +4,8 @@ import '../models/user.dart';
 import 'package:flutter/material.dart';
 
 class MessageItemWidget extends StatefulWidget {
-  MessageItemWidget({Key key, this.message, this.onDismissed}) : super(key: key);
+  MessageItemWidget({Key? key,required this.message,
+  required this.onDismissed,}) : super(key: key);
   model.Conversation message;
   ValueChanged<model.Conversation> onDismissed;
 
@@ -85,7 +86,7 @@ class _MessageItemWidgetState extends State<MessageItemWidget> {
                       this.widget.message.user.name,
                       overflow: TextOverflow.fade,
                       softWrap: false,
-                      style: Theme.of(context).textTheme.body2,
+                      style: Theme.of(context).textTheme.bodyText2,
                     ),
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.end,
@@ -95,7 +96,7 @@ class _MessageItemWidgetState extends State<MessageItemWidget> {
                             this.widget.message.chats[0].text,
                             overflow: TextOverflow.ellipsis,
                             maxLines: 2,
-                            style: Theme.of(context).textTheme.caption.merge(
+                            style: Theme.of(context).textTheme.caption?.merge(
                                 TextStyle(fontWeight: this.widget.message.read ? FontWeight.w300 : FontWeight.w600)),
                           ),
                         ),
@@ -103,7 +104,7 @@ class _MessageItemWidgetState extends State<MessageItemWidget> {
                           this.widget.message.chats[0].time,
                           overflow: TextOverflow.fade,
                           softWrap: false,
-                          style: Theme.of(context).textTheme.body1,
+                          style: Theme.of(context).textTheme.bodyText1,
                         ),
                       ],
                     )

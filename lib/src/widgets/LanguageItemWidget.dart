@@ -5,8 +5,8 @@ class LanguageItemWidget extends StatefulWidget {
   final Language language;
 
   const LanguageItemWidget({
-    Key key,
-    this.language,
+    Key? key,
+    required this.language,
   }) : super(key: key);
 
   @override
@@ -14,19 +14,19 @@ class LanguageItemWidget extends StatefulWidget {
 }
 
 class _LanguageItemWidgetState extends State<LanguageItemWidget> with SingleTickerProviderStateMixin {
-  Animation animation;
-  AnimationController animationController;
-  Animation<double> sizeCheckAnimation;
-  Animation<double> rotateCheckAnimation;
-  Animation<double> opacityAnimation;
-  Animation opacityCheckAnimation;
+  Animation? animation;
+  AnimationController? animationController;
+  Animation<double>? sizeCheckAnimation;
+  Animation<double>? rotateCheckAnimation;
+  Animation<double>? opacityAnimation;
+  Animation? opacityCheckAnimation;
   bool checked = false;
 
   @override
   void initState() {
     super.initState();
     animationController = AnimationController(duration: Duration(milliseconds: 350), vsync: this);
-    CurvedAnimation curve = CurvedAnimation(parent: animationController, curve: Curves.easeOut);
+    CurvedAnimation curve = CurvedAnimation(parent: animationController!, curve: Curves.easeOut);
     animation = Tween(begin: 0.0, end: 40.0).animate(curve)
       ..addListener(() {
         setState(() {});
@@ -52,7 +52,7 @@ class _LanguageItemWidgetState extends State<LanguageItemWidget> with SingleTick
   @override
   void dispose() {
     super.dispose();
-    animationController.dispose();
+    animationController?.dispose();
   }
 
   @override
@@ -60,9 +60,9 @@ class _LanguageItemWidgetState extends State<LanguageItemWidget> with SingleTick
     return InkWell(
       onTap: () {
         if (checked) {
-          animationController.reverse();
+          animationController?.reverse();
         } else {
-          animationController.forward();
+          animationController?.forward();
         }
         checked = !checked;
       },
@@ -89,18 +89,18 @@ class _LanguageItemWidgetState extends State<LanguageItemWidget> with SingleTick
                   ),
                 ),
                 Container(
-                  height: animation.value,
-                  width: animation.value,
+                  height: animation?.value,
+                  width: animation?.value,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.all(Radius.circular(40)),
-                    color: Theme.of(context).accentColor.withOpacity(opacityAnimation.value),
+                    color: Theme.of(context).accentColor.withOpacity(opacityAnimation?.value ?? 1),
                   ),
                   child: Transform.rotate(
-                    angle: rotateCheckAnimation.value,
+                    angle: rotateCheckAnimation?.value ?? 0,
                     child: Icon(
                       Icons.check,
-                      size: sizeCheckAnimation.value,
-                      color: Theme.of(context).primaryColor.withOpacity(opacityCheckAnimation.value),
+                      size: sizeCheckAnimation?.value,
+                      color: Theme.of(context).primaryColor.withOpacity(opacityCheckAnimation?.value),
                     ),
                   ),
                 ),
@@ -115,7 +115,7 @@ class _LanguageItemWidgetState extends State<LanguageItemWidget> with SingleTick
                     widget.language.englishName,
                     overflow: TextOverflow.ellipsis,
                     maxLines: 2,
-                    style: Theme.of(context).textTheme.subhead,
+                    style: Theme.of(context).textTheme.subtitle2,
                   ),
                   Text(
                     widget.language.localName,

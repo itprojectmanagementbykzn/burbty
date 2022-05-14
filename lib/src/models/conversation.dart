@@ -12,7 +12,7 @@ class Conversation {
 }
 
 class ConversationsList {
-  List<Conversation> _conversations;
+  late List<Conversation> _conversations;
   User _currentUser = new User.init().getCurrentUser();
 
   ConversationsList() {

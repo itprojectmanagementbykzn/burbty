@@ -13,7 +13,7 @@ class LanguagesWidget extends StatefulWidget {
 
 class _LanguagesWidgetState extends State<LanguagesWidget> {
   final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
-  LanguagesList languagesList;
+  late LanguagesList languagesList;
   @override
   void initState() {
     languagesList = new LanguagesList();
@@ -33,13 +33,13 @@ class _LanguagesWidgetState extends State<LanguagesWidget> {
 //        ),
         leading: new IconButton(
           icon: new Icon(Icons.sort, color: Theme.of(context).hintColor),
-          onPressed: () => _scaffoldKey.currentState.openDrawer(),
+          onPressed: () => _scaffoldKey.currentState?.openDrawer(),
         ),
         backgroundColor: Colors.transparent,
         elevation: 0,
         title: Text(
           'Languages',
-          style: Theme.of(context).textTheme.display1,
+          style: Theme.of(context).textTheme.displaySmall,
         ),
         actions: <Widget>[
           //new ShoppingCartButtonWidget(
@@ -81,7 +81,7 @@ class _LanguagesWidgetState extends State<LanguagesWidget> {
                     'App Language',
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
-                    style: Theme.of(context).textTheme.display1,
+                    style: Theme.of(context).textTheme.displaySmall,
                   ),
                 ),
               ),

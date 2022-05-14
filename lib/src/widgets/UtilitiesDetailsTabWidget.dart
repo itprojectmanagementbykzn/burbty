@@ -7,7 +7,7 @@ class UtilitiesDetailsTabWidget extends StatefulWidget {
   Utilitie utilitie;
   UtilitiesList _utilitiesList = new UtilitiesList();
 
-  UtilitiesDetailsTabWidget({this.utilitie});
+  UtilitiesDetailsTabWidget({required this.utilitie});
 
   @override
   UtilitiesDetailsTabWidgetState createState() => UtilitiesDetailsTabWidgetState();
@@ -30,7 +30,7 @@ class UtilitiesDetailsTabWidgetState extends State<UtilitiesDetailsTabWidget> {
             ),
             title: Text(
               'Description',
-              style: Theme.of(context).textTheme.display1,
+              style: Theme.of(context).textTheme.displaySmall,
             ),
           ),
         ),
@@ -50,7 +50,7 @@ class UtilitiesDetailsTabWidgetState extends State<UtilitiesDetailsTabWidget> {
             ),
             title: Text(
               'Related Poducts',
-              style: Theme.of(context).textTheme.display1,
+              style: Theme.of(context).textTheme.displaySmall,
             ),
           ),
         ),
@@ -63,7 +63,7 @@ class UtilitiesDetailsTabWidgetState extends State<UtilitiesDetailsTabWidget> {
 
 class SelectColorWidget extends StatefulWidget {
   SelectColorWidget({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override

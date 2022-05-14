@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 class SearchBarHomeWidget extends StatelessWidget {
   SearchBarHomeWidget({
-    Key key,
+    Key? key,
   }) : super(key: key);
   List<String> suggestions=["Delux Room","Tripple Room","Single Room","King Room"];
   @override
@@ -59,7 +59,7 @@ class SearchBarHomeWidget extends StatelessWidget {
   }
 }
   _buildSuggestions(List<String> list,BuildContext context) {
-    List<Widget> choices = List();
+    List<Widget> choices = [];
     list.forEach((item) {
       choices.add(
         Container(
@@ -72,7 +72,7 @@ class SearchBarHomeWidget extends StatelessWidget {
             padding: const EdgeInsets.only(left:10.0,right: 10,top: 3,bottom: 3),
             child: Text(
               item,
-              style: Theme.of(context).textTheme.body1.merge(TextStyle(color: Theme.of(context).primaryColor),),
+              style: Theme.of(context).textTheme.bodyText1?.merge(TextStyle(color: Theme.of(context).primaryColor),),
             
             ),
           ),

@@ -44,7 +44,7 @@ class _FavoritesWidgetState extends State<FavoritesWidget> {
                   'Wish List',
                   overflow: TextOverflow.fade,
                   softWrap: false,
-                  style: Theme.of(context).textTheme.display1,
+                  style: Theme.of(context).textTheme.displaySmall,
                 ),
                 trailing: Row(
                   mainAxisSize: MainAxisSize.min,
@@ -103,7 +103,7 @@ class _FavoritesWidgetState extends State<FavoritesWidget> {
             offstage: this.layout != 'grid' || _utilitiesList.favoritesList.isEmpty,
             child: Container(
               padding: const EdgeInsets.only(left: 20, right: 20),
-              child: new StaggeredGridView.countBuilder(
+              child:  MasonryGridView.count(
                 primary: false,
                 shrinkWrap: true,
                 crossAxisCount: 4,
@@ -116,7 +116,7 @@ class _FavoritesWidgetState extends State<FavoritesWidget> {
                   );
                 },
 //                  staggeredTileBuilder: (int index) => new StaggeredTile.fit(index % 2 == 0 ? 1 : 2),
-                staggeredTileBuilder: (int index) => new StaggeredTile.fit(2),
+                //staggeredTileBuilder: (int index) => new StaggeredTile.fit(2),
                 mainAxisSpacing: 15.0,
                 crossAxisSpacing: 15.0,
               ),

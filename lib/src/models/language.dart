@@ -7,7 +7,7 @@ class Language {
 }
 
 class LanguagesList {
-  List<Language> _languages;
+  late List<Language> _languages;
 
   LanguagesList() {
     this._languages = [

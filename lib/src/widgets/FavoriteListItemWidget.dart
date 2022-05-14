@@ -9,7 +9,10 @@ class FavoriteListItemWidget extends StatefulWidget {
   Utilitie utilitie;
   VoidCallback onDismissed;
 
-  FavoriteListItemWidget({Key key, this.heroTag, this.utilitie, this.onDismissed}) : super(key: key);
+  FavoriteListItemWidget({Key? key,
+  required this.heroTag,
+  required this.utilitie,
+  required this.onDismissed,}) : super(key: key);
 
   @override
   _FavoriteListItemWidgetState createState() => _FavoriteListItemWidgetState();
@@ -87,7 +90,7 @@ class _FavoriteListItemWidgetState extends State<FavoriteListItemWidget> {
                             widget.utilitie.name,
                             overflow: TextOverflow.ellipsis,
                             maxLines: 2,
-                            style: Theme.of(context).textTheme.subhead,
+                            style: Theme.of(context).textTheme.subtitle2,
                           ),
                           Row(
                             children: <Widget>[
@@ -100,7 +103,7 @@ class _FavoriteListItemWidgetState extends State<FavoriteListItemWidget> {
                               SizedBox(width: 4,),
                               Text(
                                 widget.utilitie.rate.toString(),
-                                style: Theme.of(context).textTheme.body2,
+                                style: Theme.of(context).textTheme.bodyText2,
                               )
                             ],
                             crossAxisAlignment: CrossAxisAlignment.center,
@@ -109,7 +112,7 @@ class _FavoriteListItemWidgetState extends State<FavoriteListItemWidget> {
                       ),
                     ),
                     SizedBox(width: 8),
-                    Text('${widget.utilitie.available} viewers', style: Theme.of(context).textTheme.display1),
+                    Text('${widget.utilitie.available} viewers', style: Theme.of(context).textTheme.displaySmall),
                   ],
                 ),
               )

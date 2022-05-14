@@ -9,10 +9,10 @@ class PopularLocationCarouselItemWidget extends StatelessWidget {
   Utilitie utilitie;
 
   PopularLocationCarouselItemWidget({
-    Key key,
-    this.heroTag,
-    this.marginLeft,
-    this.utilitie,
+    Key? key,
+    required this.heroTag,
+    required this.marginLeft,
+    required this.utilitie,
   }) : super(key: key);
 
   @override
@@ -55,7 +55,7 @@ class PopularLocationCarouselItemWidget extends StatelessWidget {
               child: Center(
                 child:Text(
                   utilitie.name,
-                  style: Theme.of(context).textTheme.body2,
+                  style: Theme.of(context).textTheme.bodyText2,
                   maxLines: 1,
                   softWrap: false,
                   overflow: TextOverflow.fade,

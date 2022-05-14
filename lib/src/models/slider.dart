@@ -1,10 +1,11 @@
 class Slider {
   String image;
-  Slider({this.image,});
+  Slider({
+    required this.image,});
 }
 
 class SliderList {
-  List<Slider> _list;
+  late List<Slider> _list;
 
   List<Slider> get list => _list;
 

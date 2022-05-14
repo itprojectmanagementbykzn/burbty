@@ -10,7 +10,7 @@ class ProductColor {
 }
 
 class ProductColorsList {
-  List<ProductColor> _list;
+  late List<ProductColor> _list;
 
   List<ProductColor> get list => _list;
 

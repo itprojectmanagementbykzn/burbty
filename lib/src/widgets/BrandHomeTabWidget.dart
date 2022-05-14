@@ -8,7 +8,7 @@ class BrandHomeTabWidget extends StatefulWidget {
   Category category;
   UtilitiesList _utilitiesList = new UtilitiesList();
 
-  BrandHomeTabWidget({this.category});
+  BrandHomeTabWidget({required this.category});
 
   @override
   _BrandHomeTabWidgetState createState() => _BrandHomeTabWidgetState();
@@ -40,7 +40,7 @@ class _BrandHomeTabWidgetState extends State<BrandHomeTabWidget> {
             ),
             title: Text(
               'Description',
-              style: Theme.of(context).textTheme.display1,
+              style: Theme.of(context).textTheme.displaySmall,
             ),
           ),
         ),
@@ -60,7 +60,7 @@ class _BrandHomeTabWidgetState extends State<BrandHomeTabWidget> {
             ),
             title: Text(
               'Popular',
-              style: Theme.of(context).textTheme.display1,
+              style: Theme.of(context).textTheme.displaySmall,
             ),
           ),
         ),

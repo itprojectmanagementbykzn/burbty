@@ -10,10 +10,10 @@ class OnBoardingWidget extends StatefulWidget {
 
 class _OnBoardingWidgetState extends State<OnBoardingWidget> {
   int _current = 0;
-  OnBoardingList _onBoardingList;
+  late OnBoardingList _onBoardingList;
   @override
   void initState() {
-    _onBoardingList = new OnBoardingList();
+    _onBoardingList = OnBoardingList();
     super.initState();
   }
 
@@ -28,13 +28,15 @@ class _OnBoardingWidgetState extends State<OnBoardingWidget> {
             Container(
               margin: EdgeInsets.symmetric(vertical: 50),
               child: CarouselSlider(
-                height: 500.0,
-                viewportFraction: 1.0,
-                onPageChanged: (index) {
-                  setState(() {
-                    _current = index;
-                  });
-                },
+                options: CarouselOptions(
+                  height: 500.0,
+                  viewportFraction: 1.0,
+                  onPageChanged: (index, __) {
+                    setState(() {
+                      _current = index;
+                    });
+                  },
+                ),
                 items: _onBoardingList.list.map((OnBoarding boarding) {
                   return Builder(
                     builder: (BuildContext context) {
@@ -54,7 +56,8 @@ class _OnBoardingWidgetState extends State<OnBoardingWidget> {
                               padding: const EdgeInsets.all(16),
                               child: Text(
                                 boarding.description,
-                                style: Theme.of(context).textTheme.display1,textAlign: TextAlign.center,
+                                style: Theme.of(context).textTheme.displaySmall,
+                                textAlign: TextAlign.center,
                               ),
                             ),
                           ),
@@ -81,9 +84,12 @@ class _OnBoardingWidgetState extends State<OnBoardingWidget> {
                               borderRadius: BorderRadius.all(
                                 Radius.circular(100),
                               ),
-                              color: _current == _onBoardingList.list.indexOf(boarding)
+                              color: _current ==
+                                      _onBoardingList.list.indexOf(boarding)
                                   ? Theme.of(context).hintColor.withOpacity(0.8)
-                                  : Theme.of(context).hintColor.withOpacity(0.2)),
+                                  : Theme.of(context)
+                                      .hintColor
+                                      .withOpacity(0.2)),
                         );
                       }).toList(),
                     ),
@@ -91,15 +97,16 @@ class _OnBoardingWidgetState extends State<OnBoardingWidget> {
                   Container(
                     padding: const EdgeInsets.symmetric(horizontal: 40),
                     child: FlatButton(
-                      padding: EdgeInsets.symmetric(horizontal: 35, vertical: 8),
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 35, vertical: 8),
                       onPressed: () {
                         Navigator.of(context).pushNamed('/SignIn');
                       },
-                      child:Text(
-                            'Skip',
-                            style: Theme.of(context).textTheme.display1.merge(
-                                  TextStyle(color: Theme.of(context).primaryColor),
-                                ),
+                      child: Text(
+                        'Skip',
+                        style: Theme.of(context).textTheme.displaySmall?.merge(
+                              TextStyle(color: Theme.of(context).primaryColor),
+                            ),
                       ),
                       color: Theme.of(context).accentColor,
                       shape: RoundedRectangleBorder(
@@ -109,7 +116,7 @@ class _OnBoardingWidgetState extends State<OnBoardingWidget> {
                   ),
                 ],
               ),
-            )     
+            )
           ],
         ),
       ),

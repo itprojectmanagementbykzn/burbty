@@ -7,7 +7,9 @@ class FavoriteGridItemWidget extends StatelessWidget {
   Utilitie utilitie;
   String heroTag;
 
-  FavoriteGridItemWidget({Key key, this.heroTag, this.utilitie}) : super(key: key);
+  FavoriteGridItemWidget({Key? key, 
+  required this.heroTag,
+  required this.utilitie,}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return InkWell(
@@ -41,13 +43,13 @@ class FavoriteGridItemWidget extends StatelessWidget {
                 SizedBox(height: 2),
                 Text(
                   utilitie.name,
-                  style: Theme.of(context).textTheme.body2,
+                  style: Theme.of(context).textTheme.bodyText2,
                   overflow: TextOverflow.ellipsis,
                 ),
                 SizedBox(height: 2),
                 Text(
                   utilitie.available.toString(),
-                  style: Theme.of(context).textTheme.display1,
+                  style: Theme.of(context).textTheme.displaySmall,
                   overflow: TextOverflow.ellipsis,
                 )
               ],

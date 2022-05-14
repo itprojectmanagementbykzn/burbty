@@ -2,11 +2,13 @@ class OnBoarding {
   String image;
   String description;
 
-  OnBoarding({this.image, this.description});
+  OnBoarding({
+    required this.image,
+    required this.description});
 }
 
 class OnBoardingList {
-  List<OnBoarding> _list;
+  late List<OnBoarding> _list;
 
   List<OnBoarding> get list => _list;
 
