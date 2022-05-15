@@ -32,7 +32,7 @@ class _AccountWidgetState extends State<AccountWidget> {
                       Text(
                         _user.name,
                         textAlign: TextAlign.left,
-                        style: Theme.of(context).textTheme.displayMedium,
+                        style: Theme.of(context).textTheme.displaySmall,
                       ),
                       Text(
                         _user.email,
@@ -112,7 +112,7 @@ class _AccountWidgetState extends State<AccountWidget> {
                       children: <Widget>[
                         Icon(UiIcons.chat_1),
                         Text(
-                          'Messages',
+                          'Recommend',
                           style: Theme.of(context).textTheme.bodyText1,
                         )
                       ],

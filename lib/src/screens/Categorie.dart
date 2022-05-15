@@ -107,7 +107,7 @@ class _CategorieWidgetState extends State<CategorieWidget> with SingleTickerProv
                         SizedBox(height: 15,),
                         Text(
                           '${widget._category.name}',
-                          style: Theme.of(context).textTheme.displayLarge,                         
+                          style: Theme.of(context).textTheme.displaySmall,
                         )
                       ],
                     )

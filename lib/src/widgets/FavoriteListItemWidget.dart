@@ -103,7 +103,7 @@ class _FavoriteListItemWidgetState extends State<FavoriteListItemWidget> {
                               SizedBox(width: 4,),
                               Text(
                                 widget.utilitie.rate.toString(),
-                                style: Theme.of(context).textTheme.bodyText2,
+                                style: TextStyle(fontSize: 14),
                               )
                             ],
                             crossAxisAlignment: CrossAxisAlignment.center,
@@ -112,7 +112,9 @@ class _FavoriteListItemWidgetState extends State<FavoriteListItemWidget> {
                       ),
                     ),
                     SizedBox(width: 8),
-                    Text('${widget.utilitie.available} viewers', style: Theme.of(context).textTheme.displaySmall),
+                    Text('${widget.utilitie.available} viewers',
+                      style: TextStyle(fontSize: 16),
+                    ),
                   ],
                 ),
               )

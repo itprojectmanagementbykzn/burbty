@@ -30,57 +30,57 @@ class CategoriesList {
   CategoriesList() {
 
     this._list = [
-      new Category('Shopping', UiIcons.shopping_cart, false, Colors.greenAccent,[
-        new Utilitie('Zogaa FlameSweater', 'img/mall1.jpeg','Health & Fitness', 80,  2554, 3.1, 10.5),
-        new Utilitie('Elu Shopping', 'img/elu.png','Business & Finance', 60,  63, 5.0, 20.2),
-        new Utilitie('Ritaj Mall', 'img/mall.jpg','Business & Finance', 80,  2554, 3.1, 10.5),
+      new Category('Cleanser', UiIcons.shopping_cart, false, Colors.greenAccent,[
+        new Utilitie('CLINIQUE', 'img/mall1.jpeg','Health & Fitness', 80,  2554, 3.1, 10.5),
+        new Utilitie('Beauty & Me', 'img/elu.png','Business & Finance', 60,  63, 5.0, 20.2),
+        new Utilitie('Ygn Cosmetic Wholesale', 'img/mall.jpg','Business & Finance', 80,  2554, 3.1, 10.5),
 
       ]),
-      new Category('Coffee & Bar', UiIcons.bar_chart, true,  Colors.cyan, [
-        new Utilitie('Lounge Coffee Bar', 'img/coffeebar.jpg','Arts & Humanities',25,  130, 4.3, 12.1),
+      new Category('Toner', UiIcons.bar_chart, true,  Colors.cyan, [
+        new Utilitie('SSY Cosmetics (Myanmar Plaza)', 'img/coffeebar.jpg','Arts & Humanities',25,  130, 4.3, 12.1),
         new Utilitie('Night Bar', 'img/coffeebar1.jpg', 'Health & Fitness',25,  130, 4.3, 12.1),
         new Utilitie('Summer Coffee', 'img/coffeebar3.jpeg', 'Health & Fitness',25,  130, 4.3, 12.1),
         new Utilitie('Winter Coffee Bar', 'img/coffeebar4.jpg', 'Health & Fitness',25,  130, 4.3, 12.1),
 
       ]),
-      new Category('Events', UiIcons.shield, false, Colors.blueAccent, [
+      new Category('Moisturizer', UiIcons.shield, false, Colors.blueAccent, [
         new Utilitie('Sequins Party Dance Ballet Event', 'img/event2.jpeg','Business & Finance' ,80,  2554, 3.1, 10.5),
         new Utilitie('Cenima film Event', 'img/event3.jpeg','Business & Finance' ,80,  2554, 3.1, 10.5),
         new Utilitie('TomorrowLand Event', 'img/event4.jpg', 'Arts & Humanities',80,  2554, 3.1, 10.5),
         new Utilitie('Creative Design Event', 'img/event1.jpg','Business & Finance' ,80,  2554, 3.1, 10.5),
 
       ]),
-      new Category('Jobseeker', UiIcons.laptop, false, Colors.orange, [
+      new Category('Serum & Essence', UiIcons.laptop, false, Colors.orange, [
         new Utilitie('WebSite Design ', 'img/jobs2.jpg','Business & Finance', 80, 2554, 3.1, 10.5),
         new Utilitie('House Keeper', 'img/jobs3.jpg','Health & Fitness', 10,  415, 4.9, 15.3),
 
         
       ]),
-      new Category('Restaurant', UiIcons.restaurant, false,  Colors.pinkAccent, [
+      new Category('Suncream', UiIcons.restaurant, false,  Colors.pinkAccent, [
         new Utilitie('La Mega Pizza', 'img/pizza.jpg','Arts & Humanities', 25,  130, 4.3, 12.1),
         new Utilitie('Piano Piano Food', 'img/restaurent.jpg','Arts & Humanities', 25,  130, 4.3, 12.1),
 
       ]),
-      new Category('Automotive', UiIcons.car_1, false,  Colors.deepPurpleAccent,[
+      new Category('Mask', UiIcons.car_1, false,  Colors.deepPurpleAccent,[
         new Utilitie('BMW', 'img/car1.jpg','Coumputers & Technology', 80,  2554, 3.1, 10.5),
         new Utilitie('Rali USA', 'img/car3.jpg','Arts & Humanities', 80,  2554, 3.1, 10.5),
         new Utilitie('Car Repair', 'img/car2.jpg','Arts & Humanities', 80,  2554, 3.1, 10.5),
         new Utilitie('Mechanical Cars', 'img/car4.jpg','Coumputers & Technology', 80,  2554, 3.1, 10.5),
         
       ]),
-      new Category('Sport', UiIcons.sport, false,  Colors.brown,[
+      new Category('Eye Cream', UiIcons.sport, false,  Colors.brown,[
         new Utilitie('Roland Gaross', 'img/sport1.jpg','Health & Fitness', 80,  2554, 3.1, 10.5),
         new Utilitie('NBA Competions', 'img/sport2.jpeg','Health & Fitness', 80,  2554, 3.1, 10.5),
         new Utilitie('Gym', 'img/gym.jpg','Health & Fitness', 10,  415, 4.9, 15.3),
 
        
       ]),
-      new Category('Travel', UiIcons.tent, true, Colors.redAccent,[
+      new Category('Make Up', UiIcons.tent, true, Colors.redAccent,[
         new Utilitie('California', 'img/chicagoTavel.jpg','Arts & Humanities', 60,  63, 5.0, 20.2),
         new Utilitie('Colorado', 'img/colorado.jpg','Arts & Humanities', 25,  130, 4.3, 12.1),
         new Utilitie('Paris', 'img/paris.jpg','Arts & Humanities', 35,  130, 6.3, 11.1), 
         new Utilitie('Marriott', 'img/marriott.jpg','Arts & Humanities', 10,  415, 4.9, 15.3),
-        new Utilitie('Hilton Hotel', 'img/hilton.webp','Coumputers & Technology',  200, 63, 5.0, 20.2),
+        new Utilitie('Dermalogica Myanmar', 'img/hilton.webp','Coumputers & Technology',  200, 63, 5.0, 20.2),
 
 
       ]),

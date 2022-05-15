@@ -48,36 +48,36 @@ class SearchBarHomeWidget extends StatelessWidget {
             ),
           ),
           SizedBox(height: 6),
-          Wrap(
-            alignment: WrapAlignment.spaceBetween,
-            children: _buildSuggestions(suggestions,context),
-          )
+          // Wrap(
+          //   alignment: WrapAlignment.spaceBetween,
+          //   children: _buildSuggestions(suggestions,context),
+          // )
         ],
       ),
        
     );
   }
 }
-  _buildSuggestions(List<String> list,BuildContext context) {
-    List<Widget> choices = [];
-    list.forEach((item) {
-      choices.add(
-        Container(
-          margin: const EdgeInsets.all(2.0),
-          child: Container(
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(6),
-              color: Theme.of(context).hintColor.withOpacity(0.2),
-            ),
-            padding: const EdgeInsets.only(left:10.0,right: 10,top: 3,bottom: 3),
-            child: Text(
-              item,
-              style: Theme.of(context).textTheme.bodyText1?.merge(TextStyle(color: Theme.of(context).primaryColor),),
-            
-            ),
-          ),
-        ),
-      );
-    }
-    );return choices;
-  }
+  // _buildSuggestions(List<String> list,BuildContext context) {
+  //   List<Widget> choices = [];
+  //   list.forEach((item) {
+  //     choices.add(
+  //       Container(
+  //         margin: const EdgeInsets.all(2.0),
+  //         child: Container(
+  //           decoration: BoxDecoration(
+  //             borderRadius: BorderRadius.circular(6),
+  //             color: Theme.of(context).hintColor.withOpacity(0.2),
+  //           ),
+  //           padding: const EdgeInsets.only(left:10.0,right: 10,top: 3,bottom: 3),
+  //           child: Text(
+  //             item,
+  //             style: Theme.of(context).textTheme.bodyText1?.merge(TextStyle(color: Theme.of(context).primaryColor),),
+  //
+  //           ),
+  //         ),
+  //       ),
+  //     );
+  //   }
+  //   );return choices;
+  // }
